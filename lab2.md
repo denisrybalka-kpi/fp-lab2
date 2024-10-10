@@ -66,6 +66,8 @@ Test 3: Passed!
 Test 4: Passed!
 ```
 ## Лістинг функції list-set-intersect-p
+Написати предикат `list-set-intersect-p`, який визначає чи перетинаються дві множини, задані списками атомів, чи ні:
+
 ```lisp
 (defun elem-in-set-p (elem set)
   (cond
