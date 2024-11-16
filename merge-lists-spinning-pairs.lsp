@@ -7,7 +7,7 @@
      (cons (list (car list1)) (merge-lists-spinning-pairs (cdr list1) nil)))  ; Якщо другий список порожній
     (t 
      (cons (list (car list1) (car list2)) 
-           (merge-lists-spinning-pairs (cdr list1) (cdr list2))))))  ; Обробляємо елементи з обох списків
+           (merge-lists-spinning-pairs (cdr list2) (cdr list1))))))  ; Обробляємо елементи з обох списків
            
 (defun pretty-print-test (test-num result expected)
   (format t "Test ~a: " test-num)
@@ -20,8 +20,8 @@
         (test2 (merge-lists-spinning-pairs '(1 2) '(a b c d e)))
         (test3 (merge-lists-spinning-pairs '() '(x y z)))
         (test4 (merge-lists-spinning-pairs '(1) '(a))))
-    (pretty-print-test 1 test1 '((1 A) (2 B) (3 C) (4 D) (5)))
-    (pretty-print-test 2 test2 '((1 A) (2 B) (C) (D) (E)))
+    (pretty-print-test 1 test1 '((1 A) (B 2) (3 C) (D 4) (5)))
+    (pretty-print-test 2 test2 '((1 A) (B 2) (C) (D) (E)))
     (pretty-print-test 3 test3 '((X) (Y) (Z)))
     (pretty-print-test 4 test4 '((1 A)))))
 
